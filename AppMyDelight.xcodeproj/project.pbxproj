@@ -15,6 +15,7 @@
 		C1244C0C2088F3D400F85C2C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1244C0A2088F3D400F85C2C /* LaunchScreen.storyboard */; };
 		C1244C142088F42B00F85C2C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C1244C132088F42B00F85C2C /* GoogleService-Info.plist */; };
 		C1DCA47620891D4900CCAAB9 /* ConnexionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DCA47520891D4900CCAAB9 /* ConnexionController.swift */; };
+		C1DCA4782089234700CCAAB9 /* LogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DCA4772089234700CCAAB9 /* LogoView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		C1244C0D2088F3D400F85C2C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C1244C132088F42B00F85C2C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C1DCA47520891D4900CCAAB9 /* ConnexionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnexionController.swift; sourceTree = "<group>"; };
+		C1DCA4772089234700CCAAB9 /* LogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoView.swift; sourceTree = "<group>"; };
 		DB09345C24EDF3BC9B7674BD /* Pods-AppMyDelight.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppMyDelight.release.xcconfig"; path = "Pods/Target Support Files/Pods-AppMyDelight/Pods-AppMyDelight.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -115,6 +117,7 @@
 		C1DCA47320891CF900CCAAB9 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				C1DCA4772089234700CCAAB9 /* LogoView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -293,6 +296,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C1DCA4782089234700CCAAB9 /* LogoView.swift in Sources */,
 				C1244C012088F3D300F85C2C /* ViewController.swift in Sources */,
 				C1DCA47620891D4900CCAAB9 /* ConnexionController.swift in Sources */,
 				C1244C072088F3D300F85C2C /* AppMyDelight.xcdatamodeld in Sources */,

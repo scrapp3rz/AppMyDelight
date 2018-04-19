@@ -7,12 +7,18 @@
 //
 
 import UIKit
+import  FirebaseAuth
 
 class ConnexionController: UIViewController {
 
+    var logoView: LogoView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
+        logoView = LogoView(frame: view.bounds)
+        view.addSubview(logoView)
         
 
     }
