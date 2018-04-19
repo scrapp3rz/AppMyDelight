@@ -16,6 +16,7 @@ class ConnexionController: UIViewController {
     var connexionView: ConnexionView!
     var myMail: String?
     var myPassword: String?
+    var usernameView: UsernameView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +25,8 @@ class ConnexionController: UIViewController {
         logoView = LogoView(frame: view.bounds)
         connexionView = ConnexionView(frame: view.bounds)
         connexionView.addController(controller: self)
+        usernameView = UsernameView(frame: view.bounds)
+        usernameView.addController(controller: self)
         view.addSubview(logoView)
         currentView = logoView
         
@@ -32,12 +35,14 @@ class ConnexionController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         if let id = Auth.auth().currentUser?.uid {
-            
+            checkUser(id: id)
         } else {
             transition(to: connexionView, transition: .transitionFlipFromRight)
         }
     }
 
+
+    
     
     func validateConnexion(mailAdress: String?, password: String?) {
         myMail = mailAdress
@@ -45,12 +50,31 @@ class ConnexionController: UIViewController {
         if let mail = myMail, mail != "" {
             if let mdp = password, myPassword != "" {
                 // verif Firebase
+                Auth.auth().signIn(withEmail: mail, password: mdp) { (user, error) in
+                    if let erreur = error {
+                        let nsErreur = erreur as NSError
+                        if nsErreur.code == 17011 {
+                            Auth.auth().createUser(withEmail: mail, password: mdp, completion: { (user, error) in
+                                if let erreur = error {
+                                    ErrorDisplay().basicError(controller: self, message: erreur.localizedDescription)
+                                }
+                                if user != nil {
+                                    self.transition(to: self.usernameView, transition: .transitionFlipFromRight)
+                                }
+                            
+                            })
+                        } else {
+                        ErrorDisplay().basicError(controller: self, message: erreur.localizedDescription)
+                    }
+                }
+                    if let id = user?.uid {
+                        self.checkUser(id: id)
+                    }
+                })
             } else {
-                // message popup
                 ErrorDisplay().basicError(controller: self, message: "Le mot de passe ne peut pas être vide")
             }
         } else {
-            // message popup
             ErrorDisplay().basicError(controller: self, message: "L'adresse mail ne peut pas être vide")
         }
     }
@@ -59,6 +83,16 @@ class ConnexionController: UIViewController {
     func transition(to: UIView, transition: UIViewAnimationOptions) {
         UIView.transition(from: currentView, to: to, duration: 0.7, options: transition) { (success) in
             self.currentView = to
+        }
+    }
+    
+    func checkUser(id: String) {
+        BDD().checkIfUserExist(id: id) { (user) -> (Void) in
+            if user != nil {
+                
+            } else {
+                self.transition(to: usernameView, transition: .transitionFlipFromRight)
+            }
         }
     }
     
