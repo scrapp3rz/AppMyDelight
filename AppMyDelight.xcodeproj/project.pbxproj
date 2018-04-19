@@ -10,11 +10,11 @@
 		AAC3106402F37F80DE0CB265 /* Pods_AppMyDelight.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C0174E126629C93C7FBA2B3 /* Pods_AppMyDelight.framework */; };
 		C1244BFF2088F3D300F85C2C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1244BFE2088F3D300F85C2C /* AppDelegate.swift */; };
 		C1244C012088F3D300F85C2C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1244C002088F3D300F85C2C /* ViewController.swift */; };
-		C1244C042088F3D300F85C2C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1244C022088F3D300F85C2C /* Main.storyboard */; };
 		C1244C072088F3D300F85C2C /* AppMyDelight.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C1244C052088F3D300F85C2C /* AppMyDelight.xcdatamodeld */; };
 		C1244C092088F3D400F85C2C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C1244C082088F3D400F85C2C /* Assets.xcassets */; };
 		C1244C0C2088F3D400F85C2C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1244C0A2088F3D400F85C2C /* LaunchScreen.storyboard */; };
 		C1244C142088F42B00F85C2C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C1244C132088F42B00F85C2C /* GoogleService-Info.plist */; };
+		C1DCA47620891D4900CCAAB9 /* ConnexionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DCA47520891D4900CCAAB9 /* ConnexionController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,12 +23,12 @@
 		C1244BFB2088F3D300F85C2C /* AppMyDelight.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppMyDelight.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1244BFE2088F3D300F85C2C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C1244C002088F3D300F85C2C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		C1244C032088F3D300F85C2C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C1244C062088F3D300F85C2C /* AppMyDelight.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AppMyDelight.xcdatamodel; sourceTree = "<group>"; };
 		C1244C082088F3D400F85C2C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C1244C0B2088F3D400F85C2C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C1244C0D2088F3D400F85C2C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C1244C132088F42B00F85C2C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		C1DCA47520891D4900CCAAB9 /* ConnexionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnexionController.swift; sourceTree = "<group>"; };
 		DB09345C24EDF3BC9B7674BD /* Pods-AppMyDelight.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppMyDelight.release.xcconfig"; path = "Pods/Target Support Files/Pods-AppMyDelight/Pods-AppMyDelight.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -82,9 +82,11 @@
 		C1244BFD2088F3D300F85C2C /* AppMyDelight */ = {
 			isa = PBXGroup;
 			children = (
+				C1DCA47420891CFC00CCAAB9 /* Model */,
+				C1DCA47320891CF900CCAAB9 /* View */,
+				C1DCA47220891CF400CCAAB9 /* Controller */,
 				C1244BFE2088F3D300F85C2C /* AppDelegate.swift */,
 				C1244C002088F3D300F85C2C /* ViewController.swift */,
-				C1244C022088F3D300F85C2C /* Main.storyboard */,
 				C1244C082088F3D400F85C2C /* Assets.xcassets */,
 				C1244C0A2088F3D400F85C2C /* LaunchScreen.storyboard */,
 				C1DCA4712088F7EB00CCAAB9 /* Plists */,
@@ -100,6 +102,28 @@
 				C1244C132088F42B00F85C2C /* GoogleService-Info.plist */,
 			);
 			path = Plists;
+			sourceTree = "<group>";
+		};
+		C1DCA47220891CF400CCAAB9 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				C1DCA47520891D4900CCAAB9 /* ConnexionController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		C1DCA47320891CF900CCAAB9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C1DCA47420891CFC00CCAAB9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -166,7 +190,6 @@
 				C1244C0C2088F3D400F85C2C /* LaunchScreen.storyboard in Resources */,
 				C1244C142088F42B00F85C2C /* GoogleService-Info.plist in Resources */,
 				C1244C092088F3D400F85C2C /* Assets.xcassets in Resources */,
-				C1244C042088F3D300F85C2C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,6 +294,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C1244C012088F3D300F85C2C /* ViewController.swift in Sources */,
+				C1DCA47620891D4900CCAAB9 /* ConnexionController.swift in Sources */,
 				C1244C072088F3D300F85C2C /* AppMyDelight.xcdatamodeld in Sources */,
 				C1244BFF2088F3D300F85C2C /* AppDelegate.swift in Sources */,
 			);
@@ -279,14 +303,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		C1244C022088F3D300F85C2C /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C1244C032088F3D300F85C2C /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		C1244C0A2088F3D400F85C2C /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
