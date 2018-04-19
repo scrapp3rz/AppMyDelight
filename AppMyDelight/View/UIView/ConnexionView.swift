@@ -17,12 +17,14 @@ class ConnexionView: UIView {
     
     
     @IBAction func Validate_Button_Action(_ sender: Any) {
+        connexionController?.validateConnexion(mailAdress: Mail_Text_Field.text, password: Password_Text_Field.text)
     }
     
     
     
     
     var view: UIView!
+    var connexionController: ConnexionController?
     
     
     override init(frame: CGRect) {
@@ -35,4 +37,9 @@ class ConnexionView: UIView {
         view = runXib()
     }
 
+    func addController(controller: ConnexionController) {
+        self.connexionController = controller
+    }
+    
+    
 }
