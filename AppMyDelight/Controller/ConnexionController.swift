@@ -36,7 +36,7 @@ class ConnexionController: UIViewController {
 
     
     func transition(to: UIView, transition: UIViewAnimationOptions) {
-        UIView.transition(from: currentView, to: to, duration: 0.5, options: transition) { (success) in
+        UIView.transition(from: currentView, to: to, duration: 0.7, options: transition) { (success) in
             self.currentView = to
         }
     }

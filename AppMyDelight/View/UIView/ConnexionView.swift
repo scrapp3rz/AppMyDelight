@@ -10,6 +10,18 @@ import UIKit
 
 class ConnexionView: UIView {
 
+    @IBOutlet weak var Mail_Text_Field: UITextField!
+    @IBOutlet weak var Password_Text_Field: UITextField!
+    @IBOutlet weak var Validate_Button: MydelButton!
+    
+    
+    
+    @IBAction func Validate_Button_Action(_ sender: Any) {
+    }
+    
+    
+    
+    
     var view: UIView!
     
     

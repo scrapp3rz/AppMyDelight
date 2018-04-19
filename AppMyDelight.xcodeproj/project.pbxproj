@@ -19,6 +19,7 @@
 		C1DCA47B2089255B00CCAAB9 /* ConnexionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DCA47A2089255B00CCAAB9 /* ConnexionView.swift */; };
 		C1DCA47D2089257C00CCAAB9 /* ConnexionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1DCA47C2089257C00CCAAB9 /* ConnexionView.xib */; };
 		C1DCA47F2089260300CCAAB9 /* UIExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DCA47E2089260300CCAAB9 /* UIExtensions.swift */; };
+		C1DCA48120892A3D00CCAAB9 /* MydelButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DCA48020892A3D00CCAAB9 /* MydelButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		C1DCA47A2089255B00CCAAB9 /* ConnexionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnexionView.swift; sourceTree = "<group>"; };
 		C1DCA47C2089257C00CCAAB9 /* ConnexionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ConnexionView.xib; sourceTree = "<group>"; };
 		C1DCA47E2089260300CCAAB9 /* UIExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIExtensions.swift; sourceTree = "<group>"; };
+		C1DCA48020892A3D00CCAAB9 /* MydelButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MydelButton.swift; sourceTree = "<group>"; };
 		DB09345C24EDF3BC9B7674BD /* Pods-AppMyDelight.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppMyDelight.release.xcconfig"; path = "Pods/Target Support Files/Pods-AppMyDelight/Pods-AppMyDelight.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -123,6 +125,8 @@
 		C1DCA47320891CF900CCAAB9 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				C1DCA47E2089260300CCAAB9 /* UIExtensions.swift */,
+				C1DCA48020892A3D00CCAAB9 /* MydelButton.swift */,
 				C1DCA4792089250B00CCAAB9 /* UIView */,
 			);
 			path = View;
@@ -141,7 +145,6 @@
 				C1DCA4772089234700CCAAB9 /* LogoView.swift */,
 				C1DCA47A2089255B00CCAAB9 /* ConnexionView.swift */,
 				C1DCA47C2089257C00CCAAB9 /* ConnexionView.xib */,
-				C1DCA47E2089260300CCAAB9 /* UIExtensions.swift */,
 			);
 			path = UIView;
 			sourceTree = "<group>";
@@ -317,6 +320,7 @@
 				C1DCA4782089234700CCAAB9 /* LogoView.swift in Sources */,
 				C1DCA47F2089260300CCAAB9 /* UIExtensions.swift in Sources */,
 				C1244C012088F3D300F85C2C /* ViewController.swift in Sources */,
+				C1DCA48120892A3D00CCAAB9 /* MydelButton.swift in Sources */,
 				C1DCA47B2089255B00CCAAB9 /* ConnexionView.swift in Sources */,
 				C1DCA47620891D4900CCAAB9 /* ConnexionController.swift in Sources */,
 				C1244C072088F3D300F85C2C /* AppMyDelight.xcdatamodeld in Sources */,
