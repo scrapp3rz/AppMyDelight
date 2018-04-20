@@ -70,7 +70,7 @@ class ConnexionController: UIViewController {
                     if let id = user?.uid {
                         self.checkUser(id: id)
                     }
-                })
+                }
             } else {
                 ErrorDisplay().basicError(controller: self, message: "Le mot de passe ne peut pas être vide")
             }

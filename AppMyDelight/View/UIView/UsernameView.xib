@@ -63,7 +63,7 @@
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="UEc-C3-nIR"/>
                     </constraints>
-                    <state key="normal" title="Button"/>
+                    <state key="normal" title="Retour"/>
                     <connections>
                         <action selector="Back_Button:" destination="-1" eventType="touchUpInside" id="a3l-eZ-E4g"/>
                     </connections>
