@@ -1,5 +1,5 @@
 //
-//  MyNavController.swift
+//  MyNav
 //  AppMyDelight
 //
 //  Created by vincent portier on 21/04/2018.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MyNavController: UINavigationController {
+class MyNav: UINavigationController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

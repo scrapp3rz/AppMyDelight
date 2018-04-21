@@ -1,5 +1,5 @@
 //
-//  TabBarController.swift
+//  MyTabBar.swift
 //  AppMyDelight
 //
 //  Created by vincent portier on 21/04/2018.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TabBarController: UITabBarController {
+class MyTabBar: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,7 +34,7 @@ class TabBarController: UITabBarController {
   }
     
     func add(controller: UIViewController, image: UIImage, title: String) -> UINavigationController {
-        let nav = MyNavController(rootViewController: controller)
+        let nav = MyNav(rootViewController: controller)
         nav.tabBarItem.image = image
         nav.tabBarItem.title = title
         return nav

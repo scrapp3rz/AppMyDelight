@@ -98,7 +98,13 @@ class ConnexionController: UIViewController {
     
     
     func gotoApp() {
-        print("et on lance l'application")
+     //   print("et on lance l'application")
+        let tab = MyTabBar()
+        self.present(tab, animated: true, completion: nil)
+        
+        
+        
+        
     }
     
     
