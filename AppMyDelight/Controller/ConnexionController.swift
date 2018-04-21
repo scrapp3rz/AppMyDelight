@@ -61,7 +61,6 @@ class ConnexionController: UIViewController {
                                 if user != nil {
                                     self.transition(to: self.usernameView, transition: .transitionFlipFromRight)
                                 }
-                            
                             })
                         } else {
                         ErrorDisplay().basicError(controller: self, message: erreur.localizedDescription)
@@ -87,14 +86,21 @@ class ConnexionController: UIViewController {
     }
     
     func checkUser(id: String) {
-        BDD().checkIfUserExist(id: id) { (user) -> (Void) in
+        BDD().getUser(id: id) { (user) -> (Void) in
             if user != nil {
-                
+                ME = user!
+                self.gotoApp()
             } else {
-                self.transition(to: usernameView, transition: .transitionFlipFromRight)
+                self.transition(to: self.usernameView, transition: .transitionFlipFromRight)
             }
         }
     }
+    
+    
+    func gotoApp() {
+        print("et on lance l'application")
+    }
+    
     
     
 }

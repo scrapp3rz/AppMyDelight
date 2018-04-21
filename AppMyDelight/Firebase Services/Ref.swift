@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import  FirebaseDatabase
+import FirebaseDatabase
 import FirebaseStorage
 
 class Ref {

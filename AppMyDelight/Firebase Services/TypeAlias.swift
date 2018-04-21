@@ -9,5 +9,6 @@
 import UIKit
 
 typealias UserCompletion = (_ user: User?) -> (Void)
+typealias SuccessCompletion = (_ success: Bool?,  _ erreur: String?) -> (Void)
 
 
