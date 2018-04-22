@@ -17,6 +17,7 @@ class PhotoController: UIViewController, UICollectionViewDelegate, UICollectionV
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if Segment.selectedSegmentIndex == 0 {
             let cell = CollectionView.dequeueReusableCell(withReuseIdentifier: CAMERA_CELL, for: indexPath) as! CameraCell
+            cell.setupCamera(controller: self)
             return cell
         } else {
             let cell = CollectionView.dequeueReusableCell(withReuseIdentifier: LIBRARY_CELL, for: indexPath) as! LibraryCell
