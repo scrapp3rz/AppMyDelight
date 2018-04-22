@@ -14,7 +14,7 @@ class MyTabBar: UITabBarController {
         super.viewDidLoad()
         
         tabBar.backgroundColor = .white
-        tabBar.tintColor = .darkgray
+        tabBar.tintColor = .black
         
 
         let layout = UICollectionViewFlowLayout()

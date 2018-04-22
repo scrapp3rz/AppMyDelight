@@ -8,28 +8,55 @@
 
 import UIKit
 
-class PhotoController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+class PhotoController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return Segment.numberOfSegments
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        if Segment.selectedSegmentIndex == 0 {
+            let cell = CollectionView.dequeueReusableCell(withReuseIdentifier: CAMERA_CELL, for: indexPath) as! CameraCell
+            return cell
+        } else {
+            let cell = CollectionView.dequeueReusableCell(withReuseIdentifier: LIBRARY_CELL, for: indexPath) as! LibraryCell
+            return cell
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: view.frame.width, height: collectionView.frame.height)
     }
     
 
-    /*
-    // MARK: - Navigation
+    @IBOutlet weak var CollectionView: UICollectionView!
+    @IBOutlet weak var Segment: UISegmentedControl!
+    
+    
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        CollectionView.delegate = self
+        CollectionView.dataSource = self
+        let appareilNib = UINib(nibName: CAMERA_CELL, bundle: nil)
+        let libraryNib = UINib(nibName: LIBRARY_CELL, bundle: nil)
+        CollectionView.register(appareilNib, forCellWithReuseIdentifier: CAMERA_CELL)
+        CollectionView.register(libraryNib, forCellWithReuseIdentifier: LIBRARY_CELL)
+        
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
     }
-    */
+
+
+ 
+    @IBAction func Segment_Choosen(_ sender: Any) {
+        let indexPath = IndexPath(item: Segment.selectedSegmentIndex, section: 0)
+        CollectionView.scrollToItem(at: indexPath, at: .right, animated: true)
+    }
+    
+    
+    
+    
+    
 
 }

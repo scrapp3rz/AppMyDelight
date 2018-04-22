@@ -23,6 +23,10 @@
 		C15C4E18208BD1B7005D1BEF /* MyNav.swift in Sources */ = {isa = PBXBuildFile; fileRef = C15C4E17208BD1B7005D1BEF /* MyNav.swift */; };
 		C15C4E1B208BD431005D1BEF /* SearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C15C4E19208BD431005D1BEF /* SearchController.swift */; };
 		C15C4E1C208BD431005D1BEF /* SearchController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C15C4E1A208BD431005D1BEF /* SearchController.xib */; };
+		C15C4E20208D0FF4005D1BEF /* CameraCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C15C4E1E208D0FF4005D1BEF /* CameraCell.swift */; };
+		C15C4E21208D0FF4005D1BEF /* CameraCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C15C4E1F208D0FF4005D1BEF /* CameraCell.xib */; };
+		C15C4E24208D1006005D1BEF /* LibraryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C15C4E22208D1006005D1BEF /* LibraryCell.swift */; };
+		C15C4E25208D1006005D1BEF /* LibraryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C15C4E23208D1006005D1BEF /* LibraryCell.xib */; };
 		C1DCA47620891D4900CCAAB9 /* ConnexionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DCA47520891D4900CCAAB9 /* ConnexionController.swift */; };
 		C1DCA4782089234700CCAAB9 /* LogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DCA4772089234700CCAAB9 /* LogoView.swift */; };
 		C1DCA47B2089255B00CCAAB9 /* ConnexionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DCA47A2089255B00CCAAB9 /* ConnexionView.swift */; };
@@ -62,6 +66,10 @@
 		C15C4E17208BD1B7005D1BEF /* MyNav.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyNav.swift; sourceTree = "<group>"; };
 		C15C4E19208BD431005D1BEF /* SearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchController.swift; sourceTree = "<group>"; };
 		C15C4E1A208BD431005D1BEF /* SearchController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchController.xib; sourceTree = "<group>"; };
+		C15C4E1E208D0FF4005D1BEF /* CameraCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraCell.swift; sourceTree = "<group>"; };
+		C15C4E1F208D0FF4005D1BEF /* CameraCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CameraCell.xib; sourceTree = "<group>"; };
+		C15C4E22208D1006005D1BEF /* LibraryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryCell.swift; sourceTree = "<group>"; };
+		C15C4E23208D1006005D1BEF /* LibraryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LibraryCell.xib; sourceTree = "<group>"; };
 		C1DCA47520891D4900CCAAB9 /* ConnexionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnexionController.swift; sourceTree = "<group>"; };
 		C1DCA4772089234700CCAAB9 /* LogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoView.swift; sourceTree = "<group>"; };
 		C1DCA47A2089255B00CCAAB9 /* ConnexionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnexionView.swift; sourceTree = "<group>"; };
@@ -156,6 +164,17 @@
 			path = NavAndTab;
 			sourceTree = "<group>";
 		};
+		C15C4E1D208D0FCA005D1BEF /* CollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				C15C4E1E208D0FF4005D1BEF /* CameraCell.swift */,
+				C15C4E1F208D0FF4005D1BEF /* CameraCell.xib */,
+				C15C4E22208D1006005D1BEF /* LibraryCell.swift */,
+				C15C4E23208D1006005D1BEF /* LibraryCell.xib */,
+			);
+			path = CollectionViewCell;
+			sourceTree = "<group>";
+		};
 		C1DCA4712088F7EB00CCAAB9 /* Plists */ = {
 			isa = PBXGroup;
 			children = (
@@ -184,6 +203,7 @@
 		C1DCA47320891CF900CCAAB9 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				C15C4E1D208D0FCA005D1BEF /* CollectionViewCell */,
 				C1DCA47E2089260300CCAAB9 /* UIExtensions.swift */,
 				C1DCA48020892A3D00CCAAB9 /* MydelButton.swift */,
 				C1DCA4792089250B00CCAAB9 /* UIView */,
@@ -294,7 +314,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C15C4E21208D0FF4005D1BEF /* CameraCell.xib in Resources */,
 				C1244C0C2088F3D400F85C2C /* LaunchScreen.storyboard in Resources */,
+				C15C4E25208D1006005D1BEF /* LibraryCell.xib in Resources */,
 				C15C4E12208BD15D005D1BEF /* PhotoController.xib in Resources */,
 				C1DCA49020894DDF00CCAAB9 /* UsernameView.xib in Resources */,
 				C1244C142088F42B00F85C2C /* GoogleService-Info.plist in Resources */,
@@ -413,6 +435,7 @@
 				C15C4E18208BD1B7005D1BEF /* MyNav.swift in Sources */,
 				C1244C012088F3D300F85C2C /* ViewController.swift in Sources */,
 				C1DCA4882089479200CCAAB9 /* Ref.swift in Sources */,
+				C15C4E24208D1006005D1BEF /* LibraryCell.swift in Sources */,
 				C1DCA48120892A3D00CCAAB9 /* MydelButton.swift in Sources */,
 				C1DCA47B2089255B00CCAAB9 /* ConnexionView.swift in Sources */,
 				C1DCA48E20894DCF00CCAAB9 /* UsernameView.swift in Sources */,
@@ -424,6 +447,7 @@
 				C1244C072088F3D300F85C2C /* AppMyDelight.xcdatamodeld in Sources */,
 				C15C4E11208BD15D005D1BEF /* PhotoController.swift in Sources */,
 				C1DCA48C208948E700CCAAB9 /* TypeAlias.swift in Sources */,
+				C15C4E20208D0FF4005D1BEF /* CameraCell.swift in Sources */,
 				C1DCA4852089471400CCAAB9 /* User.swift in Sources */,
 				C1244BFF2088F3D300F85C2C /* AppDelegate.swift in Sources */,
 				C1DCA495208B24EE00CCAAB9 /* Recipe.swift in Sources */,
