@@ -12,6 +12,10 @@ class MyTabBar: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tabBar.backgroundColor = .white
+        tabBar.tintColor = .darkgray
+        
 
         let layout = UICollectionViewFlowLayout()
         layout.minimumLineSpacing = 0
