@@ -74,6 +74,12 @@ class CameraCell: UICollectionViewCell {
     }
     
     @IBAction func Rotation_Button_Action(_ sender: Any) {
+        if position = .front {
+            position = .back
+        } else {
+            position = .front
+        }
+        setupCamera(controller: controller)
     }
     
     @IBAction func Take_Photo_Action(_ sender: Any) {
