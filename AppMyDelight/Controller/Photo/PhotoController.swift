@@ -22,9 +22,9 @@ class PhotoController: UIViewController, UICollectionViewDelegate, UICollectionV
         CollectionView.delegate = self
         CollectionView.dataSource = self
         let cameraNib = UINib(nibName: CAMERA_CELL, bundle: nil)
-        let libraryNib = UINib(nibName: LIBRARY_CELL, bundle: nil)
+        let libraryNib = UINib(nibName: LIBRAIRIE_CELL, bundle: nil)
         CollectionView.register(cameraNib, forCellWithReuseIdentifier: CAMERA_CELL)
-        CollectionView.register(libraryNib, forCellWithReuseIdentifier: LIBRARY_CELL)
+        CollectionView.register(libraryNib, forCellWithReuseIdentifier: LIBRAIRIE_CELL)
         
         
     }
@@ -46,7 +46,7 @@ class PhotoController: UIViewController, UICollectionViewDelegate, UICollectionV
             cell.setupCamera(controller: self)
             return cell
         } else {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: LIBRARY_CELL, for: indexPath) as! LibraryCell
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: LIBRAIRIE_CELL, for: indexPath) as! LibrairieCell
             cell.setup(controller: self)
             return cell
         }

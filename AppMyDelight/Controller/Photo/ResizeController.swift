@@ -41,10 +41,7 @@ class ResizeController: UIViewController, UIScrollViewDelegate {
             let controller = EffectController()
             controller.image = cutedImage
             navigationController?.pushViewController(controller, animated: true)
-            
         }
-        
-        
     }
     
     func imageToCut(image: UIImage) {
