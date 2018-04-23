@@ -28,7 +28,7 @@
                         </constraints>
                     </view>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M0g-Qe-5ed">
-                        <rect key="frame" x="15" y="403" width="32" height="32"/>
+                        <rect key="frame" x="15" y="577" width="32" height="32"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="32" id="eHB-68-07k"/>
                             <constraint firstAttribute="height" constant="32" id="ngo-xT-bIX"/>
@@ -50,7 +50,7 @@
                         </connections>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O7S-Zp-u48">
-                        <rect key="frame" x="341" y="403" width="32" height="32"/>
+                        <rect key="frame" x="341" y="577" width="32" height="32"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="32" id="1Md-yI-pu1"/>
                             <constraint firstAttribute="height" constant="32" id="5SD-s2-UtW"/>
@@ -63,15 +63,15 @@
                 </subviews>
             </view>
             <constraints>
-                <constraint firstItem="O7S-Zp-u48" firstAttribute="top" secondItem="4Jc-gI-PSY" secondAttribute="bottom" constant="15" id="Esf-DT-xuR"/>
-                <constraint firstAttribute="trailing" secondItem="O7S-Zp-u48" secondAttribute="trailing" constant="15" id="M8R-3b-f30"/>
+                <constraint firstAttribute="bottom" secondItem="O7S-Zp-u48" secondAttribute="bottom" constant="30" id="3UN-Y2-XB7"/>
+                <constraint firstItem="M0g-Qe-5ed" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="15" id="Fc3-9S-apT"/>
                 <constraint firstItem="4Jc-gI-PSY" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Tfl-TE-3tR"/>
                 <constraint firstAttribute="bottom" secondItem="gBa-nJ-ysx" secondAttribute="bottom" constant="20" id="VLb-LN-X2S"/>
-                <constraint firstItem="M0g-Qe-5ed" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="15" id="XAe-TX-wti"/>
                 <constraint firstAttribute="trailing" secondItem="4Jc-gI-PSY" secondAttribute="trailing" id="XNq-Fr-jmF"/>
                 <constraint firstItem="4Jc-gI-PSY" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="ZCo-TE-0Q8"/>
                 <constraint firstItem="gBa-nJ-ysx" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="a8I-WT-Dm4"/>
-                <constraint firstItem="M0g-Qe-5ed" firstAttribute="top" secondItem="4Jc-gI-PSY" secondAttribute="bottom" constant="15" id="yKY-ca-iJ8"/>
+                <constraint firstAttribute="trailing" secondItem="O7S-Zp-u48" secondAttribute="trailing" constant="15" id="pfO-Im-Ftu"/>
+                <constraint firstAttribute="bottom" secondItem="M0g-Qe-5ed" secondAttribute="bottom" constant="30" id="pp8-48-pdb"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="388" height="639"/>

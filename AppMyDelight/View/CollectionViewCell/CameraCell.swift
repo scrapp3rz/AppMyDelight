@@ -40,12 +40,12 @@ class CameraCell: UICollectionViewCell {
         self.Flash_Button.isHidden = true
         videoPreviewLayer?.removeFromSuperlayer()
         
-        if let appareil = AVCaptureDevice.default(.builtInWideAngleCamera, for: .video, position: position) {
-            if appareil.hasFlash {
+        if let camera = AVCaptureDevice.default(.builtInWideAngleCamera, for: .video, position: position) {
+            if camera.hasFlash {
                 Flash_Button.isHidden = false
             }
             do {
-                let input = try AVCaptureDeviceInput(device: appareil)
+                let input = try AVCaptureDeviceInput(device: camera)
                 captureSession = AVCaptureSession()
                 if (captureSession?.canAddInput(input))! {
                     captureSession?.addInput(input)
