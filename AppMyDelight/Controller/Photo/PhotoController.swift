@@ -29,7 +29,10 @@ class PhotoController: UIViewController, UICollectionViewDelegate, UICollectionV
         
     }
     
-    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        showButtonNext()
+    }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return Segment.numberOfSegments

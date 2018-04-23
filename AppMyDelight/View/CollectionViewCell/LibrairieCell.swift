@@ -55,7 +55,7 @@ class LibrairieCell: UICollectionViewCell, UICollectionViewDelegate, UICollectio
         }
         
         func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-            let size = frame.size.width / 4
+            let size = frame.size.width / 6
             return CGSize(width: size, height: size)
         }
         
@@ -83,7 +83,7 @@ class LibrairieCell: UICollectionViewCell, UICollectionViewDelegate, UICollectio
             DispatchQueue.global(qos: .background).async {
                 allAssets.enumerateObjects({ (asset, count, stop) in
                     let imageManager = PHImageManager.default()
-                    let size = CGSize(width: 150, height: 150)
+                    let size = CGSize(width: 200, height: 200)
                     let options = PHImageRequestOptions()
                     options.isSynchronous = true
                     imageManager.requestImage(for: asset, targetSize: size, contentMode: .aspectFit, options: options, resultHandler: { (image, info) in
