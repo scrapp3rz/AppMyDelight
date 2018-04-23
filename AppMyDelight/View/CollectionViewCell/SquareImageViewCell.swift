@@ -21,23 +21,7 @@ class SquareImageViewCell: UICollectionViewCell {
         super.awakeFromNib()
         // Initialization code
     }
-    func configureWithFilter(filter: String, image: UIImage) {
-        ImageView.image = image
-        ImageView.contentMode = .scaleAspectFill
-        ImageView.clipsToBounds = true
-        
-        let context = CIContext(options: nil)
-        let ciImage = CIImage(image: image)
-        if let choosenFilter = CIFilter(name: filter) {
-        choosenFilter.setDefaults()
-            choosenFilter.setValue(ciImage, forKey: kCIInputImageKey)
-            let filterData = choosenFilter.value(forKey: kCIOutputImageKey) as! CIImage
-            if let cgImage = context.createCGImage(filterData, from: filterData.extent) {
-                ImageView.image = UIImage(cgImage: cgImage, scale: image.scale, orientation: image.imageOrientation)
-            }
-    }
-    
-}
+ 
 
 
 }
