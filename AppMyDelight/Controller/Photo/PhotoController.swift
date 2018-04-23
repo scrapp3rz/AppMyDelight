@@ -47,7 +47,7 @@ class PhotoController: UIViewController, UICollectionViewDelegate, UICollectionV
             return cell
         } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: LIBRARY_CELL, for: indexPath) as! LibraryCell
-          //  cell.setup(controller: self)
+            cell.setup(controller: self)
             return cell
         }
     }
@@ -60,7 +60,9 @@ class PhotoController: UIViewController, UICollectionViewDelegate, UICollectionV
     
 
     func takePhotoAndNext(image: UIImage) {
-        
+        let controller = EffectController()
+        controller.image = image
+        navigationController?.pushViewController(controller, animated: true)
     }
     
     
@@ -68,11 +70,29 @@ class PhotoController: UIViewController, UICollectionViewDelegate, UICollectionV
     @IBAction func Segment_Choosen(_ sender: Any) {
         let indexPath = IndexPath(item: Segment.selectedSegmentIndex, section: 0)
         CollectionView.scrollToItem(at: indexPath, at: .right, animated: true)
+        showButtonNext()
     }
     
+    func showButtonNext() {
+        if Segment.selectedSegmentIndex == 1 {
+            nextButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(nextOne))
+            navigationItem.rightBarButtonItem = nextButton
+        } else {
+            if nextButton != nil {
+                nextButton = nil
+                navigationItem.rightBarButtonItem = nil
+            }
+        }
+    }
 
-
-    
+    @objc func nextOne() {
+        if choosenImage != nil {
+            let newController = ResizeController()
+            newController.image = choosenImage!
+            navigationController?.pushViewController(newController, animated: true)
+        }
+      
+    }
     
 
 }

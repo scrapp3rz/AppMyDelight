@@ -38,8 +38,12 @@
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>NSCameraUsageDescription</key>
-	<string>photo</string>
+	<string>Use Of Camera for photo</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>Use of Library</string>
 	<key>NSAppleMusicUsageDescription</key>
-	<string>Library</string>
+	<string>utilisation Media</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>use of Library</string>
 </dict>
 </plist>
