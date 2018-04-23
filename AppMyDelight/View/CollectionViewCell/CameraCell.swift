@@ -12,7 +12,7 @@ import AVFoundation
 
 let CAMERA_CELL = "CameraCell"
 
-class CameraCell: UICollectionViewCell {
+class CameraCell: UICollectionViewCell, AVCapturePhotoCaptureDelegate {
 
     @IBOutlet weak var View_Camera: UIView!
     @IBOutlet weak var Flash_Button: UIButton!
@@ -34,6 +34,8 @@ class CameraCell: UICollectionViewCell {
         // Initialization code
     }
 
+
+    
     
     func setupCamera(controller: PhotoController) {
         self.controller = controller
@@ -42,6 +44,7 @@ class CameraCell: UICollectionViewCell {
         
         if let camera = AVCaptureDevice.default(.builtInWideAngleCamera, for: .video, position: position) {
             if camera.hasFlash {
+                flash()
                 Flash_Button.isHidden = false
             }
             do {
@@ -71,6 +74,15 @@ class CameraCell: UICollectionViewCell {
     
     
     @IBAction func Flash_Button_Action(_ sender: Any) {
+        switch flashStatus {
+        case .on:
+            flashStatus = .off
+            Flash_Button.setImage(#imageLiteral(resourceName: "flash-off"), for: .normal)
+        case .off:
+            flashStatus = .on
+            Flash_Button.setImage(#imageLiteral(resourceName: "flash-on"), for: .normal)
+        }
+        flash()
     }
     
     @IBAction func Rotation_Button_Action(_ sender: Any) {
@@ -82,8 +94,46 @@ class CameraCell: UICollectionViewCell {
         setupCamera(controller: controller!)
     }
     
-    @IBAction func Take_Photo_Action(_ sender: Any) {
+    
+    func flash() {
+        switch flashStatus {
+        case .on: reglages.flashMode = .on
+        case .off: reglages.flashMode = .off
+        }
     }
+    
+    @available(iOS 11.0, *)
+    func photoOutput(_ output: AVCapturePhotoOutput, didFinishProcessingPhoto photo: AVCapturePhoto, error: Error?) {
+        guard error == nil, let data = photo.fileDataRepresentation(), let image = UIImage(data: data) else { return }
+        controller?.takePhotoAndNext(image: getSquarePhoto(image: image))
+    }
+    
+    func getSquarePhoto(image: UIImage) -> UIImage {
+        if let layer = videoPreviewLayer {
+            let rectOutput = layer.metadataOutputRectConverted(fromLayerRect: layer.bounds)
+            var cgImage = image.cgImage!
+            let x = rectOutput.origin.x * CGFloat(cgImage.width)
+            let y = rectOutput.origin.y * CGFloat(cgImage.height)
+            let width = rectOutput.size.width * CGFloat(cgImage.width)
+            let height = rectOutput.size.height * CGFloat(cgImage.height)
+            let rectACouper = CGRect(x: x, y: y, width: width, height: height)
+            cgImage = cgImage.cropping(to: rectACouper)!
+            let imageRect = UIImage(cgImage: cgImage, scale: 1, orientation: image.imageOrientation)
+            return imageRect
+        } else {
+            return image
+        }
+    }
+    
+    
+    @IBAction func Take_Photo_Action(_ sender: Any) {
+        captureOutput?.capturePhoto(with: reglages, delegate: self)
+        setupCamera(controller: controller!)
+    }
+    
+    
+    
+    
     
     
 }

@@ -59,6 +59,10 @@ class PhotoController: UIViewController, UICollectionViewDelegate, UICollectionV
     }
     
 
+    func takePhotoAndNext(image: UIImage) {
+        
+    }
+    
     
     
     @IBAction func Segment_Choosen(_ sender: Any) {
