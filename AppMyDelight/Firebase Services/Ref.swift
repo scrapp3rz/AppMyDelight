@@ -15,11 +15,19 @@ class Ref {
     let bdd = Database.database().reference()
     let stockage = Storage.storage().reference()
     
+    // DataBase
+    
     var rootUser: DatabaseReference { return bdd.child("user")}
+    var postRoot: DatabaseReference { return bdd.child("posts") }
+    var myPostsBDD: DatabaseReference { return postRoot.child(ME.id) }
+
     func specificUser(id: String) -> DatabaseReference {
         return rootUser.child(id)
     }
+
     
-    
+    // Stockage
+    var rootPostImage: StorageReference { return stockage.child("posts")}
+    var myPostImages: StorageReference { return rootPostImage.child(ME.id) }
     
 }

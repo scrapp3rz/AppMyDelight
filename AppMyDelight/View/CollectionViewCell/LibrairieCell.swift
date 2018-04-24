@@ -109,6 +109,7 @@ class LibrairieCell: UICollectionViewCell, UICollectionViewDelegate, UICollectio
     
     func recupImage(image: UIImage) {
         ImageView.image = image
+        controller?.choosenImage = image
         if let choosenImage = images.index(of: image) {
             let choosenAsset = assets[choosenImage]
             let options = PHImageRequestOptions()
@@ -122,6 +123,7 @@ class LibrairieCell: UICollectionViewCell, UICollectionViewDelegate, UICollectio
             PHCachingImageManager().requestImageData(for: choosenAsset, options: options) { (data, string, orientation, info) in
                 if let imageData = data, let newImage = UIImage(data: imageData) {
                     self.ImageView.image = newImage
+                    self.controller?.choosenImage = newImage
                 }
             }
         }

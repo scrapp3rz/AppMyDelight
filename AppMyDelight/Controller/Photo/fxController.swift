@@ -1,21 +1,23 @@
 //
-//  EffectController.swift
+//  fxController.swift
 //  AppMyDelight
 //
-//  Created by vincent portier on 23/04/2018.
+//  Created by vincent portier on 24/04/2018.
 //  Copyright © 2018 vincent portier. All rights reserved.
 //
 
 import UIKit
 import CoreImage
 
-class EffectController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
-    
+class fxController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+
     
     @IBOutlet weak var ImageView: UIImageView!
     @IBOutlet weak var CollectionView: UICollectionView!
     
+    
     var image: UIImage!
+    
     
     var effects = [
         "CIPhotoEffectChrome",
@@ -28,7 +30,8 @@ class EffectController: UIViewController, UICollectionViewDelegate, UICollection
         "CISepiaTone"
     ]
     
-    var images = [UIImage]()
+     var images = [UIImage]()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,18 +40,17 @@ class EffectController: UIViewController, UICollectionViewDelegate, UICollection
         CollectionView.dataSource = self
         let nib = UINib(nibName: SQUARE_IMAGE_CELL, bundle: nil)
         CollectionView.register(nib, forCellWithReuseIdentifier: SQUARE_IMAGE_CELL)
-        
         let suivant = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(nextOne))
         navigationItem.rightBarButtonItem = suivant
+
     }
-  
+
     @objc func nextOne() {
         let controller = FinishPostController()
         controller.image = ImageView.image!
         navigationController?.pushViewController(controller, animated: true)
     }
-    
- 
+
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -83,16 +85,16 @@ class EffectController: UIViewController, UICollectionViewDelegate, UICollection
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let size = CollectionView.frame.height / 5
+        let size = CollectionView.frame.height / 2
         return CGSize(width: size, height: size)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 10
+        return 1
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 10
+        return 1
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

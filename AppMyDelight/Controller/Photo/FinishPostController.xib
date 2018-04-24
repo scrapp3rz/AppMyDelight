@@ -37,7 +37,7 @@
                         <constraint firstAttribute="height" constant="50" id="abB-68-bSs"/>
                     </constraints>
                 </imageView>
-                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Commentaire..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="yFx-E7-F2C">
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Commentaires..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="yFx-E7-F2C">
                     <rect key="frame" x="68" y="10" width="189" height="100"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>

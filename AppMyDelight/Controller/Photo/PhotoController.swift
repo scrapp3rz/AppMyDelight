@@ -63,7 +63,7 @@ class PhotoController: UIViewController, UICollectionViewDelegate, UICollectionV
     
 
     func takePhotoAndNext(image: UIImage) {
-        let controller = EffectController()
+        let controller = fxController()
         controller.image = image
         navigationController?.pushViewController(controller, animated: true)
     }
@@ -90,7 +90,7 @@ class PhotoController: UIViewController, UICollectionViewDelegate, UICollectionV
 
     @objc func nextOne() {
         if choosenImage != nil {
-            let newController = ResizeController()
+            let newController = ResizerController()
             newController.image = choosenImage!
             navigationController?.pushViewController(newController, animated: true)
         }

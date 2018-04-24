@@ -21,9 +21,52 @@ class FinishPostController: UIViewController, UITextViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        keyboard()
         Posted_Image.image = image
-
+        TextView.delegate = self
+        let suivant = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(finishPost))
+        navigationItem.rightBarButtonItem = suivant
+        
     }
-
+    
+    
+    @objc func finishPost() {
+        if canAdd {
+            canAdd = false
+            checkTextView()
+            // enregistrer image dans le Stockage
+            guard let data = UIImageJPEGRepresentation(image, 0.5) else { return }
+            view.createActivityIndicator()
+            Stockage().addPostImage(data: data) { (success, string) -> (Void) in
+                // qui le convertit en URLString
+                self.canAdd = true
+                self.view.removeActivityIndicator()
+                if let reussi = success, reussi == true, string != nil {
+                    let dict: [String: AnyObject] = [
+                        "imageURL": string! as AnyObject,
+                        "id": ME.id as AnyObject,
+                        "text": self.TextView.text as AnyObject,
+                        "date": Date().timeIntervalSince1970 as AnyObject
+                    ]
+                    //  et finir par ajouter le post sur la bdd avec URLString
+                    BDD().createPost(dict: dict)
+                    self.navigationController?.popToRootViewController(animated: true)
+                }
+            }
+            
+        }
+        
+    }
+        
+        
+    func checkTextView() {
+        if TextView.text == "Commentaires..." {
+            TextView.text = ""
+        }
+    }
+    
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        checkTextView()
+    }
  
 }

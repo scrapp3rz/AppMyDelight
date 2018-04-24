@@ -41,6 +41,35 @@ extension UIView {
         
     }
     
+    func createActivityIndicator() {
+        let blur = UIVisualEffectView(effect: UIBlurEffect(style: .light))
+        blur.frame = bounds
+        blur.tag = 11
+        addSubview(blur)
+        
+        
+        let activity = UIActivityIndicatorView()
+        activity.activityIndicatorViewStyle = .gray
+        activity.color = .darkGray
+        activity.center = center
+        activity.tag = 5
+        activity.startAnimating()
+        addSubview(activity)
+        
+    }
+    
+    
+    func removeActivityIndicator() {
+        for view in subviews {
+            if view.tag == 11 {
+                view.removeFromSuperview()
+            }
+            if view.tag == 5, let activity = view as? UIActivityIndicatorView {
+                activity.stopAnimating()
+                activity.removeFromSuperview()
+            }
+        }
+    }
     
     
 }

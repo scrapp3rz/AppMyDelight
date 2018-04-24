@@ -46,7 +46,18 @@ class BDD {
         
     }
     
-    
+    func createPost(dict: [String: AnyObject]) {
+        Ref().myPostsBDD.childByAutoId().updateChildValues(dict) { (error, ref) in
+            guard error == nil, let postId = ref.description().components(separatedBy: "/").last else { return }
+            guard let string = dict["text"] as? String else { return }
+            let words = string.components(separatedBy: " ")
+            for word in words {
+                if word.hasPrefix("#") {
+            //        self.addHashtag(postId: postId, word: word)
+                }
+            }
+        }
+    }
     
     
 }

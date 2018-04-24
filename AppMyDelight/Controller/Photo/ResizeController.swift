@@ -5,7 +5,7 @@
 //  Created by vincent portier on 23/04/2018.
 //  Copyright © 2018 vincent portier. All rights reserved.
 //
-
+  /*
 import UIKit
 
 class ResizeController: UIViewController, UIScrollViewDelegate {
@@ -21,14 +21,23 @@ class ResizeController: UIViewController, UIScrollViewDelegate {
     var nextButton: UIBarButtonItem?
     
     
+    
+    
+    
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        imageToCut(image: image)
-        nextButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(nextOne))
-        navigationItem.rightBarButtonItem = nextButton
+     //   imageToCut(image: image)
+     //   nextButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(nextOne))
+     //   navigationItem.rightBarButtonItem = nextButton
 
     }
 
+    
+  
     @objc func nextOne () {
         let scale = 1 / ScrollView.zoomScale
         let x: CGFloat = ScrollView.contentOffset.x * scale
@@ -60,5 +69,10 @@ class ResizeController: UIViewController, UIScrollViewDelegate {
     func viewForZooming(in scrollView: UIScrollView) -> UIView? {
         return ImageView
     }
-    
+ 
 }
+
+ 
+ 
+ 
+  */
