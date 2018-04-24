@@ -19,7 +19,7 @@
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleAspectFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
@@ -37,7 +37,7 @@
                         <constraint firstAttribute="height" constant="50" id="abB-68-bSs"/>
                     </constraints>
                 </imageView>
-                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Comentaire..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="yFx-E7-F2C">
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Commentaire..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="yFx-E7-F2C">
                     <rect key="frame" x="68" y="10" width="189" height="100"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
@@ -58,12 +58,12 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="E3h-GJ-w9S" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="5wu-SK-KFy"/>
+                <constraint firstItem="E3h-GJ-w9S" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="5wu-SK-KFy"/>
                 <constraint firstItem="E3h-GJ-w9S" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="8gc-t1-X7d"/>
                 <constraint firstItem="QyN-lD-yEq" firstAttribute="leading" secondItem="yFx-E7-F2C" secondAttribute="trailing" constant="8" symbolic="YES" id="A3x-41-kT1"/>
                 <constraint firstItem="WAE-H7-vem" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="10" id="B4f-aD-dqy"/>
                 <constraint firstItem="E3h-GJ-w9S" firstAttribute="top" secondItem="QyN-lD-yEq" secondAttribute="bottom" constant="9" id="Qki-tP-uoo"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="E3h-GJ-w9S" secondAttribute="trailing" constant="20" id="Yvx-fX-jC1"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="E3h-GJ-w9S" secondAttribute="trailing" constant="10" id="Yvx-fX-jC1"/>
                 <constraint firstItem="WAE-H7-vem" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="kuo-VJ-mUL"/>
                 <constraint firstItem="yFx-E7-F2C" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="10" id="oqr-dP-Jxb"/>
                 <constraint firstItem="yFx-E7-F2C" firstAttribute="leading" secondItem="WAE-H7-vem" secondAttribute="trailing" constant="8" id="orO-JA-VUk"/>

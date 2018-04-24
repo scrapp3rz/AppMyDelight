@@ -8,18 +8,21 @@
 
 import UIKit
 
-class FinishPostController: UIViewController {
+class FinishPostController: UIViewController, UITextViewDelegate {
 
     @IBOutlet weak var Profile_Image: roundedImage!
     @IBOutlet weak var Posted_Image: UIImageView!
     @IBOutlet weak var TextView: UITextView!
     
+    var image: UIImage!
+    var canAdd = true
+    
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        Posted_Image.image = image
 
-        // Do any additional setup after loading the view.
     }
 
  
