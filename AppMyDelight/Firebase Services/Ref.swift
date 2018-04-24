@@ -20,11 +20,20 @@ class Ref {
     var rootUser: DatabaseReference { return bdd.child("user")}
     var postRoot: DatabaseReference { return bdd.child("posts") }
     var myPostsBDD: DatabaseReference { return postRoot.child(ME.id) }
+    var hashtagRoot: DatabaseReference { return bdd.child("hashtag")}
+
 
     func specificUser(id: String) -> DatabaseReference {
         return rootUser.child(id)
     }
 
+    func specificHashtag(hashtag: String) -> DatabaseReference {
+        return hashtagRoot.child(hashtag)
+    }
+    
+    func postSpecificUser(id: String) -> DatabaseReference {
+        return postRoot.child(id)
+    }
     
     // Stockage
     var rootPostImage: StorageReference { return stockage.child("posts")}

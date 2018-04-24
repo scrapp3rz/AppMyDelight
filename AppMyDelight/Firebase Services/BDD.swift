@@ -53,11 +53,14 @@ class BDD {
             let words = string.components(separatedBy: " ")
             for word in words {
                 if word.hasPrefix("#") {
-            //        self.addHashtag(postId: postId, word: word)
+                    self.addHashtag(postId: postId, word: word)
                 }
             }
         }
     }
     
-    
+    func addHashtag(postId: String, word: String) {
+        Ref().specificHashtag(hashtag: word.codage()).updateChildValues([postId: ME.id])
+        
+    }
 }
