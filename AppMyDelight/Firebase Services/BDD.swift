@@ -63,4 +63,25 @@ class BDD {
         Ref().specificHashtag(hashtag: word.codage()).updateChildValues([postId: ME.id])
         
     }
+    
+    func getPost(user: String, completion: @escaping PostCompletion) {
+        getUser(id: user) { (util) -> (Void) in
+            if util != nil {
+                Ref().postSpecificUser(id: user).observe(.childAdded, with: { (snapshot) in
+                    print(snapshot)
+                    let postId = snapshot.key
+                    if let dict = snapshot.value as? [String: AnyObject] {
+                        let newPost = Post(ref: snapshot.ref, id: postId, user: util!, comments: [], dict: dict)
+                        completion(newPost)
+                    } else {
+                        completion(nil)
+                    }
+                    
+                })
+            }
+        }
+    }
+    
+    
+    
 }
